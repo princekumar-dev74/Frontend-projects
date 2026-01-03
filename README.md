@@ -1,6 +1,6 @@
 <div align="center">
     <img  width=180 src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/frontend.png"/>
-    <h1>✨Frontend-Project's✨</h1> 
+    <h1>✨Frontend-Project's✨</h1>
 </div>
 
 <p align="center">
