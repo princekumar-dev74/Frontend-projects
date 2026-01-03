@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>鬼滅の刃 無限城編 | Demon Slayer: Infinity Castle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d70015;
+            --secondary: #f8c51c;
+            --light-bg: #f9f9f9;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+        
+        .title-font {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(215,0,21,0.03) 0%, rgba(215,0,21,0.03) 20%,transparent 20%, transparent 100%),
+                radial-gradient(circle at 90% 80%, rgba(215,0,21,0.03) 0%, rgba(215,0,21,0.03) 20%,transparent 20%, transparent 100%);
+        }
+        
+        .transparent-slayer {
+            background-image: url('2.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+        }
+        
+        .character-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(215,0,21,0.1);
+        }
+        
+        .voice-actor::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary);
+            margin: 8px auto 0;
+        }
+
+        /* simple responsive image fix so placeholders don't overflow */
+        img { display: block; max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <span class="title-font text-2xl font-bold text-red-600">鬼滅の刃</span>
+                    <span class="ml-1 text-sm text-gray-600">無限城編</span>
+                </div>
+                <div class="hidden md:flex space-x-9" id="nav-links">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 font-medium text-sm">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-600 font-medium text-sm">Story</a>
+                    <a href="#characters" class="text-gray-700 hover:text-red-600 font-medium text-sm">Hashira & Characters</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-red-600 font-medium text-sm">Gallery</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden py-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-red-600">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-red-600">Story</a>
+                <a href="#characters" class="block py-2 text-gray-700 hover:text-red-600">Hashira & Characters</a>
+                <a href="#gallery" class="block py-2 text-gray-700 hover:text-red-600">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern relative overflow-hidden">
+        <div class="transparent-slayer absolute inset-0 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-px w-12 bg-red-600"></div>
+                        <span class="ml-4 text-sm font-medium text-red-600 uppercase tracking-wider">映画 最新作</span>
+                    </div>
+                    <h1 class="title-font text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        <span class="text-red-600">鬼滅の刃</span><br>
+                        無限城 
+                    </h1>
+                    <p class="text-lg text-black-600 mb-8 max-w-lg leading-relaxed">
+                        <b>
+                        The final battle of Infinity Castle is Muzan’s shifting fortress where Demon Slayers face the Upper Rank demons in deadly one-on-one battles, leading to the final showdown against Muzan himself.</b>
+                    </p>
+                    <div class="flex space-x-4">
+                        <button id="watch-trailer" class="bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition shadow-lg hover:shadow-red-200">
+                            Watch Trailer
+                        </button>
+                        <button class="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="3.webp" 
+                         alt="Tanjiro and the Hashira standing ready for battle in dramatic poses with their swords drawn"
+                         class="rounded-lg shadow-2xl border-8 border-white">
+                    <div class="absolute -bottom-5 -right-4 bg-yellow-400 text-black px-2 py-1 rounded-md shadow-lg">
+                        <span class="font-bold text-sm">In Cinemas Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-300 py-20 relative overflow-hidden">
+        <div class="absolute -right-32 top-1/2 transform -translate-y-1/2">
+            <div class="transparent-slayer w-64 h-64"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-900 mb-4">無限城の戦い</h2>
+                <div class="h-1 w-16 bg-red-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <img src="2.jpg" 
+                         alt="The sprawling, impossible architecture of Muzan's Infinity Castle with shifting walls and floating platforms"
+                         class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">The Final Confrontation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Infinity Castle plunges Tanjiro, Nezuko, the Hashira, and the Demon Slayer Corps into Muzan’s otherworldly fortress—a shifting labyrinth of peril. Inside, they face the Upper Rank demons in intense, one-on-one battles that set the stage for the saga’s ultimate confrontation.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The film premiered in Japan on July 18, 2025, and shattered records—achieving the biggest opening day and single-day earnings in Japanese history, with over ¥7.31 billion ($49.5 million) in just four days. Within two weeks, it crossed ¥15 billion ($102 million), becoming the fastest to reach that milestone. By day 22, it climbed to around ¥20.3 billion (~$138 million), ranking as the 7th highest-grossing film ever in Japan.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A global rollout is underway: the film reached Taiwan and Southeast Asian markets starting August 8, with releases in North America, India, the UK, and Canada set for September 12, 2025—including IMAX formats.
+                    </p>
+                    <div class="flex items-center mt-8">
+                        <div class="flex-shrink-0">
+                            <img src="1.webp" 
+                                 alt="Ufotable studio logo in white background"
+                                 class="h-8">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-sm font-medium text-gray-900">Produced by:Akifumi Fujio, Masanori Miyake, Yūma Takahashi(Animated by: ufotable)</h4>
+                            <p class="text-sm text-gray-500">Animation Studio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-900 mb-4">柱と主要人物</h2>
+                <div class="h-1 w-16 bg-red-600 mx-auto mb-4"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">The elite Hashira swordsmen and main characters who take on Muzan Kibutsuji's forces</p>
+            </div>
+
+            <!-- Hashira -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center border-b-2 border-gray-200 pb-2 inline-block px-4">
+                    Demon Slayer Hashira
+                </h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Giyu Tomioka -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="giyu.jpg" 
+                                 alt="Giyu Tomioka with blank expression wearing haori with half red and half green diamond pattern" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Giyu Tomioka</h4>
+                                <p class="text-red-300 text-sm">水の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Takahiro Sakurai</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Water Hashira. A stoic but compassionate swordsman who was the first Hashira to recognize Tanjiro's potential. His Breath of Water techniques are among the most versatile.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Kyojuro Rengoku -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="rengoku.jpg" 
+                                 alt="Kyojuro Rengoku smiling confidently with fiery eyes and yellow-red haori" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Kyojuro Rengoku</h4>
+                                <p class="text-red-300 text-sm">炎の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Satoshi Hino</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Flame Hashira. An enthusiastic and honorable swordsman who serves as a role model for younger Demon Slayers. His powerful Flame Breathing techniques generate intense fire and heat.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tengen Uzui -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="tengen.jpg" 
+                                 alt="Tengen Uzui with his three wives, looking flamboyant with white hair and extravagant attire" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Tengen Uzui</h4>
+                                <p class="text-red-300 text-sm">音の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Katsuyuki Konishi</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Sound Hashira. A flashy former shinobi with enhanced hearing abilities. His Sound Breathing allows him to detect enemies by their "sound" and anticipates attacks before they happen.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!--  Shinobu Kocho -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="shinobu.jpeg" 
+                                 alt="Shinobu" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Shinobu Kocho</h4>
+                                <p class="text-red-300 text-sm">昆虫の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Saori Hayami</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Insect Hashira. Kind and graceful, but deadly. Unable to decapitate demons, she uses Insect Breathing and a poison-laced blade to deliver swift, precise strikes that target demons’ vital weaknesses.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Mitsuri Kanroji -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="mitsuri.webp" 
+                                 alt="Mitsuri" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Mitsuri Kanroji</h4>
+                                <p class="text-red-300 text-sm">恋の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Kana Hanazawa</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Love Hashira. Cheerful and warm-hearted with unmatched physical strength. Her Love Breathing blends flexibility and speed, wielding a whip-like blade capable of unpredictable, flowing strikes that overwhelm even the fastest demons.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Gyomei Himejimas -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="Gyomei.jpg" 
+                                 alt="Gyomei" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Gyomei Himejima</h4>
+                                <p class="text-red-300 text-sm">石の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Tomokazu Sugita</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The stone Hashira. Gentle and devout, yet the Corps’ strongest warrior. Blind but incredibly perceptive, his Stone Breathing combines immense strength and a massive weapon to crush even the toughest demons.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Muichiro Tokito -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="muichiro.jpg" 
+                                 alt="Muichiro Tokito" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Muichiro Tokito</h4>
+                                <p class="text-red-300 text-sm">ミストブリージング</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Kengo Kawanishi</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Mist Hashira. A young prodigy with exceptional reflexes and focus. His Mist Breathing creates deceptive movements and illusions, overwhelming opponents before they can react, despite his calm and detached demeanor.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Obanai Iguro -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="obanai.jpg" 
+                                 alt="Obanai Iguro" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Obanai Iguro</h4>
+                                <p class="text-red-300 text-sm">蛇の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Kenichi Suzumura</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The serpent Hashira. Strict and disciplined, deeply loyal to the Corps. His Serpent Breathing uses twisting, unpredictable sword paths, mirroring a snake’s movement to bypass defenses and strike at precise angles.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Sanemi Shinazugawa -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="sanemi.jpg" 
+                                 alt="Sanemi Shinazugawa" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Sanemi Shinazugawa</h4>
+                                <p class="text-red-300 text-sm">風の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Kenichi Suzumura</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The Wind Hashira. Hot-tempered yet fiercely protective, scarred from relentless battle. His Wind Breathing delivers relentless, slicing attacks from multiple angles, designed to keep opponents constantly off-balance and unable to counterattack.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Tanjiro -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center border-b-2 border-gray-200 pb-2 inline-block px-4">
+                    Team Tanjiro
+                </h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tanjiro Kamado -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="Tanjiro.jpg" 
+                                 alt="Tanjiro Kamado determined with his black sword and hanafuda earrings, with scar on forehead" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Tanjiro Kamado</h4>
+                                <p class="text-red-300 text-sm">日の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Natsuki Hanae</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                A kind-hearted and determined boy whose family was slaughtered by demons, leaving his sister as the only survivor. He wields the Breath of Water and later develops the Breath of the Sun, fighting tirelessly to find a cure for Nezuko.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Nezuko Kamado -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="nezuko.jpg" 
+                                 alt="Nezuko in her demon form with bamboo muzzle and pink eyes, yet looking kind" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Nezuko Kamado</h4>
+                                <p class="text-red-300 text-sm">Blood Demon Art</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Akari Kito</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                Tanjiro’s younger sister who was turned into a demon but retains her humanity. She fights alongside her brother, using her Blood Demon Art and immense strength to protect humans.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- zenitsu -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="zenitsu.jpg" 
+                                 alt="Zenitsu" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Zenitsu Agatsuma</h4>
+                                <p class="text-red-300 text-sm">雷の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Hiro Shimono</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                A cowardly yet surprisingly skilled swordsman who fights best when unconscious from fear. He wields the Breath of Thunder, specializing in blisteringly fast single strikes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Inosuke Hashibira -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="inosuke.jpg" 
+                                 alt="Inosuke Hashibira" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Inosuke Hashibira</h4>
+                                <p class="text-red-300 text-sm">獣の呼吸</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Yoshitsugu Matsuoka</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                A hot-headed fighter who wears a boar’s head and uses dual swords. Raised in the mountains, he developed the self-taught Breath of the Beast, relying on raw instinct and wild combat style.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demons -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center border-b-2 border-gray-200 pb-2 inline-block px-4">
+                    Demons
+                </h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!--  Muzan Kibutsuji -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="muzan.png" 
+                                 alt=" Muzan Kibutsuji" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold"> Muzan Kibutsuji</h4>
+                                <p class="text-red-300 text-sm">Demon king</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Toshihiko Seki</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                The first and most powerful demon, creator of all others. Cruel and manipulative, seeking the Blue Spider Lily to become truly immortal.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Kokushibo -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="Kokushibo.jpg" 
+                                 alt="Kokushibo" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Kokushibo</h4>
+                                <p class="text-red-300 text-sm">Upper Moon One</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Ryotaro Okiayu</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                               A master swordsman who uses the Moon Breathing style. Formerly a Demon Slayer and the twin brother of Yoriichi Tsugikuni.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Doma -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="doma.jpg" 
+                                 alt="Doma" 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Doma</h4>
+                                <p class="text-red-300 text-sm">Upper Moon Two</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Mamoru Miyano</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                A charming yet emotionless demon who leads a cult. Uses Cryokinesis-based Blood Demon Art to freeze opponents.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Akaza  -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="Akaza.png" 
+                                 alt="Akaza " 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Akaza </h4>
+                                <p class="text-red-300 text-sm">Upper Moon Three</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Akira Ishida</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                               A martial arts expert who despises the weak. Fights with powerful hand-to-hand combat using Destructive Death techniques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hantengu  -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="Hantengu.jpg" 
+                                 alt="Hantengu " 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Hantengu </h4>
+                                <p class="text-red-300 text-sm">Upper Moon Four</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Toshio Furukawa</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                               Cowardly and paranoid, able to split into multiple clones representing different emotions. Each clone is dangerous.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gyokko  -->
+                    <div class="character-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative">
+                            <img src="Gyokko.png" 
+                                 alt="Gyokko " 
+                                 class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h4 class="text-xl text-white font-bold">Gyokko </h4>
+                                <p class="text-red-300 text-sm">Upper Moon Five</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="voice-actor mb-4 text-center">
+                                <p class="text-xs text-gray-500">Japanese Voice</p>
+                                <p class="text-gray-900 font-medium">Kōsuke Toriumi</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                               A twisted, artistic demon obsessed with pottery. Manipulates water and summons deadly aquatic creatures from his pots.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-900 mb-4">映画の画像-- Gallery</h2>
+                <div class="h-1 w-16 bg-red-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic1.jpg" 
+                         alt="Epic battle scene between Tanjiro wielding his red blade against Muzan with intense glowing eyes"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic2.jpg" 
+                         alt="All nine Hashira standing together in formation before the final battle"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic3.jpg" 
+                         alt="The impossible architecture of Muzan's Infinity Castle with its shifting rooms and bridges"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic4.jpeg" 
+                         alt="Nezuko conquering the sun with her awakened demon powers glowing pink"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic5.jpg" 
+                         alt="Zenitsu using Thunder Breathing at incredible speed creating lightning trails"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic6.webp" 
+                         alt="Inosuke breaking through walls with his Beast Breathing style and dual jagged swords"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic7.webp" 
+                         alt="Wind Hashira Sanemi creating razor sharp wind blades with his green katana"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg shadow-md">
+                    <img src="pic8.avif" 
+                         alt="Serpent Hashira Obanai moving like a snake with his crooked sword"
+                         class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="title-font text-white text-2xl mb-4">鬼滅の刃</h3>
+                    <p class="text-sm mb-6">The hit manga by Koyoharu Gotouge comes to its cinematic conclusion with the Infinity Castle Arc.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/princekumar-dev74" class="text-gray-400 hover:text-white" aria-label="GitHub">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/prince_kumar_74_/" class="text-gray-400 hover:text-white" aria-label="Instagram">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Twitter">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#home" class="hover:text-white">Home</a></li>
+                        <li><a href="#about" class="hover:text-white">Story</a></li>
+                        <li><a href="#characters" class="hover:text-white">Characters</a></li>
+                        <li><a href="#gallery" class="hover:text-white">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
+                    <p class="text-sm">For inquiries & licensing, email <a href="mailto:info@example.com" class="hover:text-white">sprince05873@gmail.com</a></p>
+                    <p class="text-xs text-gray-500 mt-4">© <span id="year"></span> Demon Slayer Fan Page • All artwork and characters belong to their respective owners.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Small scripts -->
+    <script>
+        // mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // update footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // "Watch Trailer" placeholder action (scroll to gallery as demo)
+        document.getElementById('watch-trailer').addEventListener('click', () => {
+            const gallery = document.getElementById('gallery');
+            if (gallery) gallery.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // progressive image loading hint (optional small enhancement)
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('img').forEach(img => {
+                img.loading = 'lazy';
+            });
+        });
+    </script>
+</body>
+</html>

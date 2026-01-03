@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimoroLife - Your Gate to Anime Life</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+        
+        :root {
+            --primary: #ff4081;
+            --secondary: #536dfe;
+            --accent: #00bcd4;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(10px);
+        }
+        
+        .manga-panel {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .manga-panel:hover {
+            transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+        }
+        
+        .post-card {
+            transform: perspective(1000px) rotateY(0deg);
+            transition: all 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn-anime {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .btn-anime:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-anime::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: -1;
+        }
+        
+        .btn-anime:hover::after {
+            opacity: 1;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0;
+        }
+        
+        .btn-anime:hover .sparkle {
+            animation: sparkle-animation 0.5s ease-out;
+        }
+        
+        @keyframes sparkle-animation {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .character-silhouette {
+            filter: drop-shadow(0 0 15px rgba(255,64,129,0.7));
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from {
+                filter: drop-shadow(0 0 15px rgba(255,64,129,0.7));
+            }
+            to {
+                filter: drop-shadow(0 0 25px rgba(53,109,254,0.7));
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Floating decorations -->
+    <div class="fixed top-20 left-10 w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-20 blur-xl"></div>
+    <div class="fixed bottom-20 right-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 blur-xl"></div>
+    <div class="fixed top-1/3 left-1/4 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-10 blur-xl"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 bg-black bg-opacity-70 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-3xl font-bold text-gradient mr-4">AnimoroLife</h1>
+                <span class="text-gray-300 italic">Your Gate to Anime Life</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white hover:text-pink-400 transition">Home</a>
+                <a href="#blog" class="text-white hover:text-blue-400 transition">Blog</a>
+                <a href="#about" class="text-white hover:text-cyan-400 transition">About</a>
+                <a href="#contact" class="text-white hover:text-purple-400 transition">Contact</a>
+            </div>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="parallax min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/39e08388-ff5a-4150-ab07-9e0ad78a7b51.png');">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6">
+                <span class="text-gradient relative">
+                    <span class="absolute -left-2 -top-2 z-0 w-full h-full bg-white opacity-20 blur-md"></span>
+                    Animoro<span class="text-white">Life</span>
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">Dive into the ultimate anime experience with news, reviews, and discussions about your favorite shows!</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="btn-anime bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold transition-all relative">
+                    Explore Blog
+                    <span class="sparkle"></span>
+                </button>
+                <button class="btn-anime bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all relative">
+                    Join Community
+                    <span class="sparkle"></span>
+                </button>
+            </div>
+        </div>
+        
+       
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-16 text-center text-gradient">Latest Posts</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Blog Post 1 -->
+                <div class="post-card bg-gray-800 rounded-xl overflow-hidden relative group">
+                    <div class="manga-panel relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3959c6ef-0c17-465c-9980-2951b3c7043e.png" alt="Top anime shows of the new season featuring colorful character montage" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-pink-600 text-white text-xs px-2 py-1 rounded">Trending</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-gray-400 text-sm">May 15, 2023</span>
+                            <span class="mx-3 text-gray-500">|</span>
+                            <span class="text-blue-400 text-sm">10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Top 10 Anime to Watch This Season</h3>
+                        <p class="text-gray-300 mb-4">Discover the most anticipated anime of the season with our comprehensive guide...</p>
+                        <button class="btn-anime bg-transparent border border-blue-500 hover:border-blue-400 text-blue-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all">Read More</button>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="post-card bg-gray-800 rounded-xl overflow-hidden relative group">
+                    <div class="manga-panel relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6ff0bab4-6e83-4a08-8776-8d505996770e.png" alt="Collage of popular anime characters from different series with vibrant colors" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Analysis</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-gray-400 text-sm">May 10, 2023</span>
+                            <span class="mx-3 text-gray-500">|</span>
+                            <span class="text-blue-400 text-sm">15 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Character Development in Shonen Anime</h3>
+                        <p class="text-gray-300 mb-4">Exploring how character arcs have evolved in popular shonen series over the years...</p>
+                        <button class="btn-anime bg-transparent border border-blue-500 hover:border-blue-400 text-blue-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all">Read More</button>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="post-card bg-gray-800 rounded-xl overflow-hidden relative group">
+                    <div class="manga-panel relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/491a69a6-e638-4f36-939d-87198fe4873f.png" alt="Gorgeous anime background art with vibrant sunset colors and detailed scenery" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">Art</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-gray-400 text-sm">May 5, 2023</span>
+                            <span class="mx-3 text-gray-500">|</span>
+                            <span class="text-blue-400 text-sm">8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">The Evolution of Anime Art Styles</h3>
+                        <p class="text-gray-300 mb-4">From cel animation to digital: how anime art has transformed through the decades...</p>
+                        <button class="btn-anime bg-transparent border border-blue-500 hover:border-blue-400 text-blue-400 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all">Read More</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="btn-anime bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-all relative">
+                    View All Posts
+                    <span class="sparkle"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 relative">
+                    <div class="floating">
+                        <img src="demon-slayer-infinity-castle-1752819191765.webp" alt="Featured anime series with main characters in action poses with vibrant effects" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-pink-600 rounded-full opacity-20 blur-xl -z-10"></div>
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-600 rounded-full opacity-20 blur-xl -z-10"></div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-4xl font-bold mb-6 text-gradient">Featured Anime of the Month</h2>
+                    <h3 class="text-2xl font-bold mb-4 text-white">"Demon Slayer: Infinity-castle movie"</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">The Demon Slayer Corps plunge into Infinity Castle to defeat Muzan. However, the remaining Hashiras and the Demon Slayers who survived Tanjiro's Final Selection are pitted against the remaining members of the Twelve Kizuki first.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-pink-500 rounded-full mr-2"></div>
+                            <span class="text-gray-300">Animation: 10/10</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
+                            <span class="text-gray-300">Story: 9.5/10</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-purple-500 rounded-full mr-2"></div>
+                            <span class="text-gray-300">Characters: 9/10</span>
+                        </div>
+                    </div>
+                    <button class="btn-anime mt-8 bg-transparent border-2 border-pink-500 hover:bg-pink-500 text-white px-8 py-3 rounded-full font-semibold transition-all relative">
+                        Read Full Review
+                        <span class="sparkle"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gradient">About AnimoroLife</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Your ultimate destination for all things anime, where passion meets in-depth analysis and community discussion.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition">
+                    <div class="text-pink-500 text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Our Mission</h3>
+                    <p class="text-gray-300">To provide anime fans with high-quality content that celebrates Japanese animation culture through thoughtful analysis and engaging discussions.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition">
+                    <div class="text-blue-500 text-4xl mb-4">✍️</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Our Writers</h3>
+                    <p class="text-gray-300">A team of passionate anime enthusiasts with decades of combined experience watching, analyzing, and loving anime across all genres.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition">
+                    <div class="text-purple-500 text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Our Community</h3>
+                    <p class="text-gray-300">Join thousands of anime fans in our forums and Discord to discuss your favorite shows, characters, and theories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-900 to-blue-900">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Stay Updated with AnimoroLife</h2>
+                <p class="text-gray-200 mb-8">Subscribe to our newsletter and never miss the latest anime news, reviews, and exclusive content.</p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-3 rounded-full bg-black bg-opacity-30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    <button class="btn-anime bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold transition-all relative">
+                        Subscribe Now
+                        <span class="sparkle"></span>
+                    </button>
+                </div>
+                <p class="text-gray-400 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold text-gradient mb-4">AnimoroLife</h3>
+                    <p class="text-gray-400 max-w-xs">Your gateway to the vibrant world of anime - reviews, news, and community.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-white font-medium mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-4">Categories</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">News</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Reviews</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Analysis</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Guides</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-pink-600 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-blue-600 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-purple-600 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 AnimoroLife. All rights reserved.</p><br>Created by prince
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 3D Floating Elements -->
+    <div class="fixed bottom-16 left-1/4 w-16 h-16 bg-blue-500 rounded-full opacity-20 blur-xl -z-10 transform translate-x-12"></div>
+    <div class="fixed top-1/3 right-16 w-24 h-24 bg-pink-500 rounded-full opacity-20 blur-xl -z-10 transform -translate-y-8"></div>
+
+    <!-- Particle Animation Canvas -->
+    <canvas id="particles" class="fixed top-0 left-0 w-full h-full -z-20"></canvas>
+
+    <script>
+        // Particle animation
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const colors = ['#ff4081', '#536dfe', '#00bcd4'];
+        const particles = [];
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.opacity = Math.random() * 0.5;
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                
+                // Slight opacity variation
+                this.opacity += (Math.random() * 0.02 - 0.01);
+                this.opacity = Math.max(0.1, Math.min(0.5, this.opacity));
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        initParticles();
+        animateParticles();
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // 3D card effect for posts when hovering
+        document.querySelectorAll('.post-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleY = (x - centerX) / 20;
+                const angleX = (centerY - y) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
+                card.style.boxShadow = `${-angleY * 2}px ${angleX * 2}px 30px rgba(0,0,0,0.3)`;
+                
+                // Add glow effect
+                const glowX = (x / rect.width) * 100;
+                const glowY = (y / rect.height) * 100;
+                card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,64,129,0.1) 0%, rgba(25,25,38,0.9) 70%)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+                card.style.background = 'rgb(31, 41, 55)';
+            });
+        });
+        
+        // Button sparkle effect
+        document.querySelectorAll('.btn-anime').forEach(button => {
+            button.addEventListener('mouseenter', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                for (let i = 0; i < 5; i++) {
+                    const sparkle = document.createElement('span');
+                    sparkle.className = 'sparkle';
+                    
+                    // Position randomly around the mouse
+                    const xPos = x + (Math.random() - 0.5) * 20;
+                    const yPos = y + (Math.random() - 0.5) * 20;
+                    
+                    sparkle.style.left = `${xPos}px`;
+                    sparkle.style.top = `${yPos}px`;
+                    
+                    button.appendChild(sparkle);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

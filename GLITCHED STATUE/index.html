@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrambleTextPlugin.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script defer type="module" src="main.js"></script>
+    <title>Glitched statue | webkaizen</title>
+</head>
+<body>
+    <script type="importmap">
+{
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/controls/OrbitControls.js",
+        "three/examples/jsm/loaders/GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/loaders/GLTFLoader.js",
+        "three/examples/jsm/postprocessing/EffectComposer": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/postprocessing/EffectComposer.js",
+        "three/examples/jsm/postprocessing/RenderPass": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/postprocessing/RenderPass.js",
+        "three/examples/jsm/postprocessing/UnrealBloomPass": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/postprocessing/UnrealBloomPass.js"
+    }
+}
+</script>
+ 
+<canvas class="webgl"></canvas>
+    <div id="preloader" style="display: block;">
+        <!-- <div class="loder-parent">
+            <div id="loader"></div>
+        </div> -->
+        <!-- <p class="loader-text" id="loading-text">Loading</p> -->
+        <p class="loader-info-text">webkaizen loading...</p>
+    </div>
+ 
+    <main>
+        <header class="header">
+            <a href="https://www.youtube.com/@WebKaizenDev" class="logo">
+                <img src="https://webprojects.cloud/r&d/roman-structure/images/Logo.svg" alt="Logo">
+            </a>
+            <div class="nav-link-container">
+                <button>
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/search-icon.svg" alt="search">
+                </button>
+                <a href="https://www.youtube.com/@WebKaizenDev">visit</a>
+                <a href="https://www.youtube.com/@WebKaizenDev">exhibitions & events</a>
+                <a href="https://www.youtube.com/@WebKaizenDev">collection</a>
+                <button class="toggle-btn">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/menu_icon.svg" alt="menu_icon">
+                </button>
+            </div>
+        </header>
+        <section>
+            <div class="banner-section">
+                <h1>WEBKAIZEN</h1>
+                <p>Welcome to the relics museum, where history and art come to life. Explore our diverse collection of
+                    artifacts, paintings, and sculptures, each with its own unique story to tell, Plan your visit and
+                    book tickets online.</p>
+                <a href="https://www.youtube.com/@WebKaizenDev">
+                    plan your visit
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/arrow-green.svg" alt="arrow">
+                </a>
+            </div>
+        </section>
+        <section class="images-container">
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/man-one.jpg" alt="man">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/women-one.jpg" alt="women">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/women-two.jpg" alt="women">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/man-two.jpg" alt="man">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/women-four.jpg" alt="women">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/man-four.jpg" alt="man">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/man-five.jpg" alt="man">
+                </div>
+            </div>
+ 
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/man-six.jpg" alt="man">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/women-six.jpg" alt="women">
+                </div>
+            </div>
+ 
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/man-seven.jpg" alt="man">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/men-eight.jpg" alt="man">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/women-eight.jpg" alt="women">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/women-nine.jpg" alt="women">
+                </div>
+            </div>
+            <div class="img">
+                <div class="img-main">
+                    <img src="https://webprojects.cloud/r&d/roman-structure/images/men-nine.jpg" alt="man">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
