@@ -16,19 +16,19 @@
     <!--project-1 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/AIRPODS ANIMATION">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/AIRPODS-ANIMATION">
             <p align="center">AIRPODS ANIMATION</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/01.png"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/ANIMATED CHAIR PRODUCT">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/ANIMATED-CHAIR-PRODUCT">
             <p align="center">ANIMATED CHAIR PRODUCT</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/02.png"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/ANIMORO BLOG">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/ANIMORO-BLOG">
             <p align="center">ANIMORO BLOG</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/03.png"/>
         </a>
@@ -37,19 +37,19 @@
     <!-- 第二行 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/Book Potfolio website">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/Book-Potfolio-website">
             <p align="center">Book Potfolio website</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/04.png"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/DEMON SLAYER WEBSITE">
-            <p align="center">DEMON SLAYER WEBSITE</p>
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/DEMON-SLAYER-SITE">
+            <p align="center">DEMON SLAYER SITE</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/05.png"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/DYNAMIC POTFOLIO">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/DYNAMIC-POTFOLIO">
             <p align="center">DYNAMIC POTFOLIO</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/06.png"/>
         </a>
@@ -64,13 +64,13 @@
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/GAMING WEBSITE">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/GAMING-WEBSITE">
             <p align="center">GAMING WEBSITE</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/08.png"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/GAMING WEBSITE 2">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/GAMING-WEBSITE-2">
             <p align="center">GAMING WEBSITE 2</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/09.png"/>
         </a>
@@ -79,7 +79,7 @@
     <!-- 第二行 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/GLITCHED STATUE">
+        <a target="_blank" href="https://github.io/princekumar-dev74/Frontend-projects/GLITCHED-STATUE">
             <p align="center">GLITCHED STATUE</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/10.png"/>
         </a>
