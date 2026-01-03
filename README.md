@@ -37,7 +37,7 @@
     <!-- 第二行 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/Book-Potfolio-website">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/BOOK-POTFOLIO-WEBSITE">
             <p align="center">Book Potfolio website</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/04.png"/>
         </a>
