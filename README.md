@@ -34,7 +34,7 @@
         </a>
     </td>
     </tr>
-    <!-- 第二行 -->
+    <!-- project-2-->
     <tr>
     <td valign="top">
         <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/BOOK-POTFOLIO-WEBSITE">
@@ -55,7 +55,7 @@
         </a>
     </td>
     </tr>
-    <!-- 第二行 -->
+    <!-- project-3 -->
     <tr>
     <td valign="top">
         <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/FROSTHUB">
@@ -76,7 +76,7 @@
         </a>
     </td>
     </tr>
-    <!-- 第二行 -->
+    <!-- project-4-->
     <tr>
     <td valign="top">
         <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/GLITCHED-STATUE">
@@ -88,5 +88,11 @@
         <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/GSAP-ANIMATION">
             <p align="center">GSAP-ANIMATION</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/11.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/UNIQUE-WORLD">
+            <p align="center">UNIQUE-WORLD</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/12.png"/>
         </a>
     </td>
