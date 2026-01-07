@@ -96,3 +96,112 @@
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/12.png"/>
         </a>
     </td>
+    <!-- project-5-->
+    <tr>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/3D-ROTATE-ANIMATION">
+            <p align="center">3D-ROTATE-ANIMATION</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/13.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/3D-SLIDER">
+            <p align="center">3D-SLIDER</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/14.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/BEE-ANIMATION">
+            <p align="center">BEE-ANIMATION</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/15.png"/>
+        </a>
+    </td>
+    <!-- project-6-->
+    <tr>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/CAR-SLIDER-ANIMATION">
+            <p align="center">CAR-SLIDER-ANIMATION</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/16.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/CIRCULAR-GALLERY">
+            <p align="center">CIRCULAR-GALLERY</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/17.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/DIWALI-FIREWORK">
+            <p align="center">DIWALI-FIREWORK</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/18.png"/>
+        </a>
+    </td>
+    <!-- project-7-->
+    <tr>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/HEADPHONE-ANIMATION">
+            <p align="center">HEADPHONE-ANIMATION</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/19.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/LV">
+            <p align="center">LV</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/20.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/MARVEL-SLIDER">
+            <p align="center">MARVEL-SLIDER</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/21.png"/>
+        </a>
+    </td>
+    <!-- project-8-->
+    <tr>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/NETFLIX-ANIMATION">
+            <p align="center">NETFLIX-ANIMATION</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/22.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/ORCHESTRA">
+            <p align="center">ORCHESTRA</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/23.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/PIZZA">
+            <p align="center">PIZZA</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/24.png"/>
+        </a>
+    </td>
+    <!-- project-9-->
+    <tr>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/POTFOLIO-HOME-PAGE">
+            <p align="center">POTFOLIO-HOME-PAGE</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/25.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/URBANISH-SLIDER">
+            <p align="center">URBANISH-SLIDER</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/26.png"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/VALORANT-CHARACTERS">
+            <p align="center">VALORANT-CHARACTERS</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/27.png"/>
+        </a>
+    </td>
+        <!-- project-10-->
+    <tr>
+    <td valign="top">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/WEEDING-SITE">
+            <p align="center">WEEDING-SITE</p>
+            <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/28.png"/>
+        </a>
+    </td>
+    </tr>
