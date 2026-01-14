@@ -179,7 +179,7 @@
     <!-- project-9-->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/POTFOLIO-HOME-PAGE">
+        <a target="_blank" href="https://princekumar-dev74.github.io/Frontend-projects/POTFOLIO-HOME-PAGE/index(Home)/">
             <p align="center">POTFOLIO-HOME-PAGE</p>
             <img src="https://cdn.jsdelivr.net/gh/princekumar-dev74/Frontend-projects/LOGOS/img/25.png"/>
         </a>
